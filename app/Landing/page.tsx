@@ -1,9 +1,18 @@
+'use client'
 import BaseButton from "@/components/Base/Button";
 import LandingBox from "@/components/Landing/box";
-import LandingCarousel from "@/components/Landing/carousel";
+// import LandingCarousel from "@/components/Landing/carousel";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function LandingPage() {
+  const landingBoxRef = useRef<HTMLDivElement>(null);
+
+  const scrollToLandingBox = () => {
+    if (landingBoxRef.current) {
+      landingBoxRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <div className="px-[200px] pt-[200px] bg-landing-pattern h-[950px] bg-no-repeat bg-contain flex items-start justify-between bg-lightGray">
@@ -35,8 +44,12 @@ export default function LandingPage() {
         width={50}
         height={50}
         className="cursor-pointer absolute right-[50%] left-50 bottom-0 top-[850px]"
+        onClick={scrollToLandingBox}
       />
-      <div className="pt-[20px] pb-[50px] flex items-center justify-between w-full px-[200px]  bg-lightGray">
+      <div
+        className="pt-[20px] pb-[50px] flex items-center justify-between w-full px-[200px]  bg-lightGray"
+        ref={landingBoxRef}
+      >
         <LandingBox
           image="./landing/box-pic1.svg"
           title="offer your"

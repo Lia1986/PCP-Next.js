@@ -9,7 +9,7 @@ export default function navbar() {
       </div>
       <div className="flex flex-col items-center gap-[10px] cursor-pointer">
         <Image src={"./menu.svg"} alt="passenger" width={30} height={30} />
-        <p>MENU</p>
+        <p className="uppercase">menu</p>
       </div>
     </div>
   );

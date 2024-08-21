@@ -23,7 +23,7 @@ export default function NavTabs() {
         onClick={() => handleTabClick("PASSENGER")}
       >
         <Image src={"./nav/car.svg"} alt="passenger" width={20} height={15} />
-        <p>PASSENGER</p>
+        <p className="uppercase">passenger</p>
       </div>
 
       <div
@@ -31,7 +31,7 @@ export default function NavTabs() {
         onClick={() => handleTabClick("DRIVER")}
       >
         <Image src={"./nav/driver.svg"} alt="driver" width={20} height={15} />
-        <p>DRIVER</p>
+        <p className="uppercase">driver</p>
       </div>
     </div>
   );
